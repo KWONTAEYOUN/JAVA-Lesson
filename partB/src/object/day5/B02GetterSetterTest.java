@@ -4,10 +4,6 @@ public class B02GetterSetterTest {
     public static void main(String[] args) {
         MyClass2 momo = new MyClass2();
 
-         
-
-
-
         System.out.println("MyClass2의 field1 값 (초기) : " + momo.getField2());
         momo.setFiled2(999);
         System.out.println("MyClass2의 field1 값 (변경 후) : " + momo.getField2());

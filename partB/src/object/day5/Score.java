@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 // 학생들의 성적을 객체로 만들어 줄 클래스 입니다.
 public class Score {
-
+    // 인스턴스 필드
     private String name;        // 학생 이름
     private int grade;          // 학년
     private int[] jumsues;      // 점수들이 저장될 배열
                                 // 배열의 크기는 학년마다 다를 수 있음.
-    
+    // 인스턴스 메소드 : 인스턴스 필드를 사용하는 처리를 합니다.
     //getter
     public String getName(){
         return name;
@@ -20,6 +20,7 @@ public class Score {
     public int[] getJumsues(){
         return jumsues;
     }
+
     //setter
     public void setName(String n1){
         name = n1;
