@@ -13,7 +13,7 @@ public class C05MapExampie {
         // : 또는 정렬(key 기준)된 방식으로 접근해야 한다면 TreeMap
         // Map의 구성요소 : key, value 중에서 key는 set 특성을 갖고 있다.
 
-        Map<String, String> map = new TreeMap<>();//new LinkedHashMap<>();//new HashMap<>();
+        Map<String, String> map = new TreeMap<>();  //new LinkedHashMap<>();//new HashMap<>();
         map.put("tw", "트와이스");
         map.put("nu", "뉴진스");
         map.put("as", "에스파");

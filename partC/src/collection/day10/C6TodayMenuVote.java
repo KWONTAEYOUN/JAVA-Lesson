@@ -34,7 +34,7 @@ public class C6TodayMenuVote {
                 map.put(key, ++value);
                 System.out.println("투표가 추가 되었습니다!!");
             } else {
-                System.out.println("선정된 메뉴 중에서 다시 선택학세요. ~~");
+                System.out.println("선정된 메뉴 중에서 다시 선택하세요. ~~");
                 map.put(key, 1);    // 새로운 메뉴 초기화
                 menu += "," + key;        // 메뉴 문자열 수정
             }
