@@ -1,9 +1,9 @@
 package collection.myapp;
 
 import java.util.List;
-
 public class JavaWordApp {
     public static void main(String[] args) {
+        // JavaWord는 단어 객체, JavaWordBook은 단어장 객체
         // 단어장을 시작하는 프로그램
         // 1) 단어장을 생성
         JavaWordBook myBook = new JavaWordBook();
@@ -18,8 +18,8 @@ public class JavaWordApp {
         myBook.addWord(new JavaWord("application", "응용프로그램", 2));
         myBook.addWord(new JavaWord("binary", "2진수의", 3));
         // 메모장 출력
-        myBook.wordAllPrint();
-        // 3) 딘아 조회
+        myBook.print();
+        // 3) 단어 조회
         // -1 영어 단어 입력하면 찾아주기
         String findText = "";
         JavaWord result = myBook.searchWord(findText);
@@ -27,9 +27,11 @@ public class JavaWordApp {
         
         // -2 List<JavaWord> searchWordByLevel1(int level) : 레벨로 조회하기
         List<JavaWord> list = myBook.searchWordByLevel1(1);
-        myBook.wordListPrint(list);
-
+        JavaWordBook.wordListPrint(list);
         // 4) 단어 삭제
+        myBook.removeWord(findText);
+
+
 
 
     }

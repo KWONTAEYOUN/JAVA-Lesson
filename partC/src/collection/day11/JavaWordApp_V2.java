@@ -3,6 +3,7 @@ package collection.day11;
 import java.util.ArrayList;
 import java.util.List;
 
+import collection.day11.JavaWordApp_V2;
 import collection.myapp.JavaWord;
 // JavaWordApp_V2 : 메소드 만드는 연습
 //                  검색 메소드, print 메소드 리팩토링(refactoeing)
@@ -57,6 +58,8 @@ public class JavaWordApp_V2 {
     private void initialize() {
         // words 리스트 요소를 몇 개만 저장해서 초기화
         words.add(new JavaWord("public", "공용의", 1));
+        words.add(new JavaWord("public", "공동의", 1));
+        words.add(new JavaWord("public", "공용의", 1));
         words.add(new JavaWord("private", "사적인", 1));
         words.add(new JavaWord("iterator", "반복자", 3));
         words.add(new JavaWord("application", "응용프로그램", 2));
@@ -71,13 +74,14 @@ public class JavaWordApp_V2 {
         for (int i = 0; i < words.size(); i++) {
             if(words.get(i).getEnglish().equals(find)){
                 isFind = true;
-                System.out.println("인덱스" + i + "에서 단어를 찾았습니다.");
+                System.out.println(" 단어를 찾았습니다." + words.get(i));
                 System.out.println("삭제하려면 엔터, 취소는 n을 입력하세요.");
                 if(System.console().readLine().equals("n"))
                         continue;
                 else{ 
                     words.remove(i); System.out.println("단어 삭제 완료 !!!");
-                    // 단어 삭제
+                    // 단어 삭제 후 다음 인덱스는 
+                    i -- ;
              }
             }  // if end
         } // for end

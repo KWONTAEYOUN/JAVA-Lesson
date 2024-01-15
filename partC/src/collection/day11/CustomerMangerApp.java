@@ -1,6 +1,7 @@
 package collection.day11;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 // 1월 14일 저녁 9시까지 제출
@@ -34,7 +35,7 @@ public class CustomerMangerApp {
                     removeApp(); // 고객 삭제
                     break;
                 case 4:
-                    setApp(); // 고객 수정
+                    modifyApp(); // 고객 수정
                     break;
                 case 5:
                     listApp(); // 고객 리스트 출력
@@ -69,7 +70,7 @@ public class CustomerMangerApp {
         for (int i = 0; i < apps.size(); i++) {
             if (apps.get(i).getName().equals(find)) {
                 isFind = true;
-                System.out.println("\t >> 리스트" + i + "에서 단어를 찾았습니다. <<");
+                System.out.println("\t >> 리스트에서 " + apps.get(i).getName() + " 정보를 찾았습니다. <<");
                 System.out.println("\t>> 삭제하려면 엔터, 취소는 n을 입력하세요. <<");
                 if (System.console().readLine().equals("n"))
                     continue;
@@ -148,23 +149,34 @@ public class CustomerMangerApp {
     }
 
     // 고객 정보 수정
-    public void setApp(){
-    List<Customer> list =new ArrayList<>();
-    String find = null;
-    System.out.println("\t >> 고객님의 정보를 수정합니다, << \n");
-    switch (System.console().readLine()) {
-        case "1":
-        System.out.println("\t >> 수정할 고객님의 이름을 적어주세요 << \n");
-            find = System.console().readLine();
-            list = searchNameApp(find);
-                break;
+    public void modifyApp(){
+        Iterator<Customer> iterator = apps.iterator();
+        String find = null;
+        System.out.println("\t >> 고객님의 정보를 수정합니다. << \n");
+        System.out.println("\t >> 수정할 고객님의 이름을 적어주세요. << \n");
+        find = System.console().readLine();
+        boolean isFind = false;
 
-            list.set(0, ) System.out.println("\t >> 리스트에서 고객님의 정보를 찾았습니다. <<\n")
-        default :
-                System.out.println("\t\t>> 등록되어있지 고객님 입니다.<< "); 
-                break;        
+        while (iterator.hasNext()) {
+            Customer customer = iterator.next();
+            if (customer.getName().equals(find)) {
+                isFind = true;
+                System.out.println("\t >> 리스트에서 고객님의 정보를 찾았습니다.");
+                // 새로운 고객 정보 등록
+                System.out.println("\t >> 새로운 전화번호를 입력하세요 : <<");
+                String newPhone = System.console().readLine();
+                System.out.println("\t >> 새로운 그룹을 입력하세요.(1. 일반 2. VIP 3. 기타)__<<");
+                int newGroup = Integer.parseInt(System.console().readLine());
+                customer.modify(newPhone, newGroup);
+                System.out.println("\t >> 고객님의 정보가 수정되었습니다. <<\n");
+
+                listApp();
+            }
         }
+        if (!isFind)
+            System.out.println(">> 등록되어있지 않은 고객 이름 입니다. <<\n");
     }
+   
     // 고객 정보 등록
     private void addApp() {
         System.err.println("\t >> 고객 등록입니다. << ");
