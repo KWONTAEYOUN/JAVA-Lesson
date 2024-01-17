@@ -6,7 +6,7 @@ import java.io.IOException;
 
 // 파일 입력 스트림으로 이미지 파일 읽어옵니다.
 //  --> 파일 출력 스트림으로 파일 내용을 출력(파일 복사)
-public class D06FileCOpyTest {
+public class D06FileCopyTest {
     public static void main(String[] args) {
         FileInputStream fis = null;
         FileOutputStream fos = null;

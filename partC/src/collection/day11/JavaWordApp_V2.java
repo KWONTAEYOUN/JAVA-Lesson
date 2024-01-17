@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import collection.day11.JavaWordApp_V2;
-import collection.myapp.JavaWord;
-// JavaWordApp_V2 : 메소드 만드는 연습
-//                  검색 메소드, print 메소드 리팩토링(refactoeing)
 
 public class JavaWordApp_V2 {
     // private : 현재 클래스에서만 사용할 목적으로 접을 제한!

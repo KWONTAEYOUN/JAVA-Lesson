@@ -3,8 +3,6 @@ package collection.day11;
 import java.util.ArrayList;
 import java.util.List;
 
-import collection.myapp.JavaWord;
-
 public class JavaWordApp_V1 {
     // private : 현재 클래스에서만 사용할 목적으로 접을 제한!
     private List<JavaWord> words = new ArrayList<>();
